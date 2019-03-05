@@ -8,12 +8,14 @@ The following files are required for this demo.
 
 ### Repository
 - [App Starters](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/) repository.
-- Download the following:
- - [http-source-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/http-source-rabbit/2.1.0.RELEASE/http-source-rabbit-2.1.0.RELEASE.jar)
-  - [filter-processor-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/filter-processor-rabbit/2.1.0.RELEASE/filter-processor-rabbit-2.1.0.RELEASE.jar)
-  - [groovy-transform-processor-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/groovy-transform-processor-rabbit/2.1.0.RELEASE/groovy-transform-processor-rabbit-2.1.0.RELEASE.jar)
-  - [jdbc-sink-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/jdbc-source-rabbit/2.1.0.RELEASE/jdbc-source-rabbit-2.1.0.RELEASE.jar)
-  - [log-sink-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/log-sink-rabbit/2.1.0.RELEASE/log-sink-rabbit-2.1.0.RELEASE.jar)
+
+### Downloads:
+Download the following app starters:
+- [http-source-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/http-source-rabbit/2.1.0.RELEASE/http-source-rabbit-2.1.0.RELEASE.jar)
+- [filter-processor-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/filter-processor-rabbit/2.1.0.RELEASE/filter-processor-rabbit-2.1.0.RELEASE.jar)
+- [groovy-transform-processor-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/groovy-transform-processor-rabbit/2.1.0.RELEASE/groovy-transform-processor-rabbit-2.1.0.RELEASE.jar)
+- [jdbc-sink-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/jdbc-source-rabbit/2.1.0.RELEASE/jdbc-source-rabbit-2.1.0.RELEASE.jar)
+- [log-sink-rabbit](https://repo.spring.io/libs-release/org/springframework/cloud/stream/app/log-sink-rabbit/2.1.0.RELEASE/log-sink-rabbit-2.1.0.RELEASE.jar)
 
 
 There is a `download.sh` script that will download all the necessary app starters. These starters are based on RabbitMQ as transport layer.
