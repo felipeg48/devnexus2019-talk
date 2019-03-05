@@ -42,9 +42,9 @@ There is a `download.sh` script that will download all the necessary app starter
 
 1. Make sure you have RabbitMQ up and running.
 2. Start the `http-source-rabbit` app starter.
- ```
- java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
- ```
+   ```
+   java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
+   ```
 3. Start the `filter-processor-rabbit` app starter.
  ```
  java -jar filter-processor-rabbit-2.1.0.RELEASE.jar --filter.expression="#jsonPath(payload,'$.review.stars') >= 3" --spring.cloud.stream.bindings.input.destination=http --spring.cloud.stream.bindings.output.destination=log --server.port=8082
