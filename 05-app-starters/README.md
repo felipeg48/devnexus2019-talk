@@ -25,9 +25,9 @@ There is a `download.sh` script that will download all the necessary app starter
 
 1. Start up RabbitMQ. You can install it using `brew install rabbitmq` on a Mac or Linux. If you are using Windows you can use `choco install rabbitmq` with [Chocolatey](https://chocolatey.org/). Or if you prefer and you have Docker install you can execute: `docker run --rm --name rmq -d -p 5672:5672 rabbitmq:3.7`.
 2. Start the `http-source-rabbit` app starter.
- ```
- java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
- ```
+   ```
+   java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
+   ```
 3. Start the `log-sink-rabbit` app starter.
  ```
  java -jar log-sink-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.input.destination=http --server.port=8082
