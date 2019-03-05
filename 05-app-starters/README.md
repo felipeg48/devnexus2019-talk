@@ -29,35 +29,35 @@ There is a `download.sh` script that will download all the necessary app starter
    java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
    ```
 3. Start the `log-sink-rabbit` app starter.
- ```
- java -jar log-sink-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.input.destination=http --server.port=8082
- ```
+   ```
+   java -jar log-sink-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.input.destination=http --server.port=8082
+   ```
 4. Send some information
- ```
- curl -XPOST -H "Content-Type: application/json" -d '{"review": {"topic":"spring","comment":"this is amazing","stars":5} }' http://localhost:8081
- ```
+   ```
+   curl -XPOST -H "Content-Type: application/json" -d '{"review": {"topic":"spring","comment":"this is amazing","stars":5} }' http://localhost:8081
+   ```
 5. [Optional] You can stop the app starters by doing `Ctrl+c`.
 
 ### Adding a Filter
 
 1. Make sure you have RabbitMQ up and running.
 2. Start the `http-source-rabbit` app starter.
-   ```
-   java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
-   ```
+    ```
+    java -jar http-source-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=http --server.port=8081
+    ```
 3. Start the `filter-processor-rabbit` app starter.
- ```
- java -jar filter-processor-rabbit-2.1.0.RELEASE.jar --filter.expression="#jsonPath(payload,'$.review.stars') >= 3" --spring.cloud.stream.bindings.input.destination=http --spring.cloud.stream.bindings.output.destination=log --server.port=8082
- ```
+   ```
+   java -jar filter-processor-rabbit-2.1.0.RELEASE.jar --filter.expression="#jsonPath(payload,'$.review.stars') >= 3" --spring.cloud.stream.bindings.input.destination=http --spring.cloud.stream.bindings.output.destination=log --server.port=8082
+   ```
 4. Start the `log-sink-rabbit` app starter.
- ```
- java -jar log-sink-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.input.destination=log --server.port=8083
- ```
+   ```
+   java -jar log-sink-rabbit-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.input.destination=log --server.port=8083
+   ```
 5. Send some information
- ```
- curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":"spring","comment":"this is amazing","stars":5}}' http://localhost:8081
-curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":".net","comment":"this is microsoft","stars":1}}' http://localhost:8081
- ```
+   ```
+   curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":"spring","comment":"this is amazing","stars":5}}' http://localhost:8081
+   curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":".net","comment":"this is microsoft","stars":1}}' http://localhost:8081
+   ```
 
 **NOTE**
 You can create a folder for every app and create an `application.properties` with all the parameters, avoiding have too much in the command line.
@@ -67,15 +67,15 @@ You can create a folder for every app and create an `application.properties` wit
 1. Make sure you have RabbitMQ up and running.
 2. Create a folder per each app starter and add the `application.properties`.
 3. Start the `http-source-rabbit` app starter.
-```
-cd source
-java -jar http-source-rabbit-2.1.0.RELEASE.jar
-```
+   ```
+   cd source
+   java -jar http-source-rabbit-2.1.0.RELEASE.jar
+   ```
 4. Start the `filter-processor-rabbit` app starter.
-```
-cd processor
-java -jar filter-processor-rabbit-2.1.0.RELEASE.jar
-```
+   ```
+   cd processor
+   java -jar filter-processor-rabbit-2.1.0.RELEASE.jar
+   ```
 5. Add the following snippet to the `transformer` folder. Create the script: `transfrom.groovy`.
    ```groovy
    import groovy.json.JsonSlurper
@@ -99,12 +99,12 @@ java -jar filter-processor-rabbit-2.1.0.RELEASE.jar
    java -jar groovy-transform-processor-rabbit-2.1.0.RELEASE.jar
    ```
 6. Start the `log-sink-rabbit` app starter.
-```
-cd sink
-java -jar log-sink-rabbit-2.1.0.RELEASE.jar
-```
+   ```
+   cd sink
+   java -jar log-sink-rabbit-2.1.0.RELEASE.jar
+   ```
 7. Send some information
-```
-curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":"spring","comment":"this is amazing","stars":5}}' http://localhost:8081
-curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":".net","comment":"this is microsoft","stars":1}}' http://localhost:8081
-```
+   ```
+   curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":"spring","comment":"this is amazing","stars":5}}' http://localhost:8081
+   curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":".net","comment":"this is microsoft","stars":1}}' http://localhost:8081
+   ```
