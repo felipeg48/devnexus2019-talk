@@ -8,8 +8,8 @@ services:
   dataflow-server:
     image: springcloud/spring-cloud-dataflow-server-local:1.7.4.RELEASE
     container_name: dataflow-server
-	volumes:
-	  - ~/.m2:/root/.m2
+    volumes:
+      - ~/.m2:/root/.m2
     ports:
       - "9393:9393"
       - "9000-9010:9000-9010"

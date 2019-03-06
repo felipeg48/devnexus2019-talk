@@ -1,0 +1,13 @@
+# Spring Cloud Data Flow
+
+## Stream
+http --port=9001 | filter --expresion="#jsonPath(payload,'$.review.stars') >= 3" | log
+
+## DOCKER
+ docker exec -it dataflow-server tail -f  /stdout_0.log
+
+## POST
+curl -XPOST -H "Content-Type: application/json" -d '{"review":{"topic":"spring","comment":"this is amazing","stars":2}}' http://localhost:9001
+ 
+
+

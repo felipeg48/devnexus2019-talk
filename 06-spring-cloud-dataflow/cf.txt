@@ -1,0 +1,7 @@
+
+cf create-service p-dataflow standard dataflow-server
+
+https://bit.ly/Celsius-SR2-stream-applications-rabbit-maven
+
+
+
