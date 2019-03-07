@@ -5,7 +5,7 @@ def jsonSlurper = new JsonSlurper()
 def json = jsonSlurper.parseText(new String(payload))
 
 if (json.review.stars == 5) {
-    json.quote = json.review.comment.toUpperCase()
+    json.review.comment = json.review.comment.toUpperCase()
     println "Accepted and transformed, data to be sent..."
 } else {
     println "Data to be sent with no transformation..."
